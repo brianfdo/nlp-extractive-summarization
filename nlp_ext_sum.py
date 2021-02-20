@@ -42,7 +42,7 @@ for sentence in sentence_list:
     data.append(token(cleaning(lowercase(sentence))))
 data = (list(filter(None, data)))
 
-wordfreq = word_freq(data)
+
 
 ranking = sentence_weight(data)
 
