@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 import urllib.request
 from nlp_ext_sum import sentence_split, lowercase, cleaning, token, word_freq, sentence_weight
 
+# Example
+url = 'https://www.cnn.com/2021/03/05/world/mars-perseverance-rover-first-drive-scn-trnd/index.html'
+num = 4
+
 def summarize(url, number_of_sentences):
     r = urllib.request.urlopen(url).read()
     soup = BeautifulSoup(r, 'html.parser')
@@ -25,3 +29,5 @@ def summarize(url, number_of_sentences):
     for i in range(n):
         result += '{} '.format(sentence_list[sort_list[i]])
     return result
+
+summarize(url, num)
